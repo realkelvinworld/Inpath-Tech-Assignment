@@ -205,7 +205,7 @@ export default function Navbar() {
                   <div className="absolute inset-0 z-10 bg-opacity-20" />
                   <div className="absolute inset-0 z-10 bg-opacity-20 bg-gradient-to-t from-primary-border/50 via-transparent to-primary-border/50" />
                   <div className="relative z-20 flex w-full justify-between px-4">
-                    {/* <div className="w-10"></div> */}
+                    <div className="w-10"></div>
                     <div className="flex flex-1 flex-col items-center dark:text-white text-gray-950">
                       {Navlinks.map((data, i) => {
                         const { id, link, name } = data;
