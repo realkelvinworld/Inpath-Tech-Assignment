@@ -1,4 +1,3 @@
-import Image from "next/image";
 import SearchBar from "../app/components/SearchBar"; // Corrected spelling
 
 export default function Home() {
