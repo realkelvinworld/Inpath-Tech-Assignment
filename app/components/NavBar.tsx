@@ -66,7 +66,7 @@ export default function Navbar() {
           {/* navlinks */}
           <div className="flex w-auto items-center justify-center">
             <div
-              className={`fixed top-[9px] py-4 dark:bg-slate-950 bg-white lg:px-28 flex w-full items-center justify-around px-2 ${
+              className={`fixed top-[94px] py-4 dark:bg-slate-950 bg-white lg:px-28 flex w-full items-center justify-around px-2 ${
                 !navColor
                   ? "bg-primary-background "
                   : "bg-opacity-30 backdrop-blur-lg backdrop-filter border-b-[2px] border-gray-600"
