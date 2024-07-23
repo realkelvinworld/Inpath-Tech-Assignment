@@ -15,7 +15,7 @@ import { ArrowRight, Search } from "lucide-react";
 function SearchBar() {
   return (
     <main className="mt-5">
-      <section className="flex items-center justify-between px-2 py-2 lg:w-[600px] w-[360px] border rounded-full bg-white ">
+      <section className="flex items-center justify-between px-2 py-2 lg:w-[600px] w-full border rounded-full bg-white ">
         <div className="flex items-center">
           <span>
             <Search className="h-6 w-6 text-slate-200" />

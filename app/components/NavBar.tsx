@@ -356,16 +356,16 @@ export default function Navbar() {
                         className="absolute inset-0 bg-primary-border/50"
                       ></motion.div>
                     )}
-                    <span className="dark:hidden">
-                      <Image src={icon1} alt={name} width={20} height={20} />
-                    </span>
-                    <span className="hidden dark:inline">
-                      <Image src={icon2} alt={name} width={20} height={20} />
-                    </span>
                     <Link
                       href={link}
-                      className="relative hover:opacity-60 hover:transition-opacity hover:duration-500 font-semibold"
+                      className="relative hover:opacity-60 hover:transition-opacity hover:duration-500 font-semibold flex items-center gap-x-2"
                     >
+                      <span className="dark:hidden">
+                        <Image src={icon1} alt={name} width={20} height={20} />
+                      </span>
+                      <span className="hidden dark:inline">
+                        <Image src={icon2} alt={name} width={20} height={20} />
+                      </span>
                       {name}
                     </Link>
                   </div>
@@ -374,7 +374,7 @@ export default function Navbar() {
             </div>
             <div className="flex items-center space-x-3 text-base">
               <Link
-                href="https://app.aviotcapitals.com/register/"
+                href="/"
                 className={cn(
                   buttonVariants({
                     variant: "secondary",
@@ -386,7 +386,7 @@ export default function Navbar() {
                 Sign Up
               </Link>
               <Link
-                href="https://app.aviotcapitals.com/"
+                href="/"
                 className={cn(
                   buttonVariants({
                     size: "lg",
@@ -414,7 +414,7 @@ export default function Navbar() {
                   <div className="absolute inset-0 z-10 bg-opacity-20 bg-gradient-to-t from-primary-border/50 via-transparent to-primary-border/50" />
                   <div className="relative z-20 flex w-full justify-between px-4">
                     <div className="w-10"></div>
-                    <div className="flex flex-1 flex-col items-center dark:text-white text-gray-950">
+                    <div className="flex flex-1 flex-col items-center dark:text-white text-gray-950 ">
                       {Navlinks.map((data, i) => {
                         const { id, link, name } = data;
                         return (
@@ -469,7 +469,7 @@ export default function Navbar() {
               </motion.div>
             )}
           </AnimatePresence>
-          <div className="bg-white dark:bg-slate-950 flex items-center justify-between bg-opacity-85 px-3 py-2 w-full">
+          <div className="bg-white dark:bg-slate-950 flex items-center justify-between  px-3 py-2 w-full">
             <div>
               <Link href="/">
                 <div className="p-2">
