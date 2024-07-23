@@ -79,9 +79,12 @@ export default function Navbar() {
             </Link>
             <div className="flex text-[15px] text-black dark:text-white">
               {Navlinks.map((data) => {
-                const { id, link, name } = data;
+                const { id, link, name, icon1, icon2 } = data;
                 return (
-                  <div key={id} className="relative px-3 py-1">
+                  <div
+                    key={id}
+                    className="relative px-3 py-1 flex gap-2 items-center justify-center"
+                  >
                     {pathname === link && (
                       <motion.div
                         layoutId="nav-desktop"
@@ -92,6 +95,12 @@ export default function Navbar() {
                         className="absolute inset-0 bg-primary-border/50"
                       ></motion.div>
                     )}
+                    <span className="dark:hidden">
+                      <Image src={icon1} alt={name} width={20} height={20} />
+                    </span>
+                    <span className="hidden dark:inline">
+                      <Image src={icon2} alt={name} width={20} height={20} />
+                    </span>
                     <Link
                       href={link}
                       className="relative hover:opacity-60 hover:transition-opacity hover:duration-500 font-semibold"
@@ -146,7 +155,7 @@ export default function Navbar() {
                     <div className="w-10"></div>
                     <div className="flex flex-1 flex-col items-center dark:text-white text-gray-950">
                       {Navlinks.map((data, i) => {
-                        const { id, link, name } = data;
+                        const { id, link, name, icon } = data;
                         return (
                           <motion.div
                             key={id}
