@@ -15,7 +15,7 @@ import { ArrowRight, Search } from "lucide-react";
 function SearchBar() {
   return (
     <main className="mt-5">
-      <section className="flex items-center justify-between px-2 py-2 lg:w-[600px] w-[380px] border rounded-full bg-white ">
+      <section className="flex items-center justify-between px-2 py-2 lg:w-[600px] w-[360px] border rounded-full bg-white ">
         <div className="flex items-center">
           <span>
             <Search className="h-6 w-6 text-slate-200" />
@@ -23,12 +23,12 @@ function SearchBar() {
           <Input
             type="text"
             placeholder={`Try "Civil Engineer"`}
-            className="dark:bg- bg-white text-black border-none outline-none focus:outline-none lg:w-[330px] w-[200px]"
+            className="dark:bg- bg-white text-black border-none outline-none focus:outline-none lg:w-[330px] w-[180px]"
           />
         </div>
         <div className="border-l flex item ">
           <Select>
-            <SelectTrigger className="lg:w-[180px] w-[100px] bg-transparent border-none text-slate-400 dark:bg- bg-white">
+            <SelectTrigger className="lg:w-[180px] w-[80px] bg-transparent border-none text-slate-400 dark:bg- bg-white">
               <SelectValue placeholder="Jobs" />
             </SelectTrigger>
             <SelectContent>

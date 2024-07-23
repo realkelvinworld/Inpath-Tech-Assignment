@@ -3,17 +3,21 @@ import SearchBar from "../app/components/SearchBar"; // Corrected spelling
 export default function Home() {
   return (
     <main className="herobg1 h-[100vh] flex  justify-center px-6">
-      <section className=" flex flex-col items-start lg:mt-56 mt-32">
-        <div className="flex flex-col items-start">
-          <h1 className="font-black text-6xl">Discover a greater you.</h1>
-          <p className="font-bold text-4xl mt-4">
+      <section className=" flex flex-col items-start lg:mt-52 mt-28">
+        <div className="">
+          <h1 className="lg:font-black font-bold lg:text-6xl text-5xl">
+            Discover a greater you.
+          </h1>
+          <p className="font-bold lg:text-4xl text-3xl mt-3">
             We help you{" "}
             <span className="text-green-700 dark:text-green-500">
               find the perfect job
             </span>{" "}
           </p>
         </div>
-        <SearchBar />
+        <div className="py-6">
+          <SearchBar />
+        </div>
       </section>
     </main>
   );
