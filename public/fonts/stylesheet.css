@@ -1,12 +1,3 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-.herobg1 {
-  background-image: url("../public/images/hero-images.svg");
-  background-repeat: no-repeat;
-  background-size: cover;
-  /* opacity: 0.9; */
-}
 /* Thin */
 @font-face {
   font-family: "Bicyclette";
@@ -57,39 +48,4 @@
     url("/fonts/Bicyclette-Black.ttf") format("truetype");
   font-weight: 900;
   font-style: normal;
-}
-
-/* Thin */
-.font-thin {
-  font-family: "Bicyclette", sans-serif;
-  font-weight: 100;
-}
-
-/* Bold */
-.font-bold {
-  font-family: "Bicyclette", sans-serif;
-  font-weight: bold;
-}
-
-/* Regular */
-.font-regular {
-  font-family: "Bicyclette", sans-serif;
-  font-weight: normal;
-}
-
-/* Black */
-.font-black {
-  font-family: "Bicyclette", sans-serif;
-  font-weight: 900;
-}
-
-/* styles.css */
-input:focus,
-button:focus,
-div:focus {
-  outline: none !important;
-}
-
-.select-trigger:focus {
-  outline: none !important;
 }
