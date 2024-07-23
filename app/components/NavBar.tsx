@@ -155,7 +155,7 @@ export default function Navbar() {
                     <div className="w-10"></div>
                     <div className="flex flex-1 flex-col items-center dark:text-white text-gray-950">
                       {Navlinks.map((data, i) => {
-                        const { id, link, name, icon } = data;
+                        const { id, link, name } = data;
                         return (
                           <motion.div
                             key={id}
