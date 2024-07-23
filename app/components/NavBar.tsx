@@ -29,7 +29,8 @@ export default function Navbar() {
     changeBackground();
     // adding the event when scroll change background
     window.addEventListener("scroll", changeBackground);
-  });
+    return () => window.removeEventListener("scroll", changeBackground); // Cleanup listener
+  }, []);
 
   const handleHanburgerMenu = () => {
     if (!menuBtnState) {
@@ -57,88 +58,49 @@ export default function Navbar() {
     <nav
       className={`${
         pathname === "/studio" && "hidden"
-      } flex relative z-[450] flex-col items-center`}
+      } flex relative z-[450] flex-col items-center w-full`}
     >
       {/* nav-container */}
-      <div className="flex relative w-full flex-col items-center px-10">
+      <div className="flex w-full flex-col items-center ">
         {/* desktop */}
-        <div className="hidden relative z-10 items-center justify-between md:flex bg-transparent">
+        <div className="hidden md:flex relative w-full z-10 bg-white">
           {/* navlinks */}
-          <div className="flex w-auto items-center justify-center">
-            <div
-              className={`fixed top-[94px] py-4 dark:bg-slate-950 bg-white lg:px-28 flex w-full items-center justify-around px-2 ${
-                !navColor
-                  ? "bg-primary-background "
-                  : "bg-opacity-30 backdrop-blur-lg backdrop-filter border-b-[2px] border-gray-600"
-              }`}
-            >
-              <Link href="/">
-                <div className="w-28">
-                  <Image src={Logo} alt="Logo" className="" />
-                </div>
-              </Link>
-              <div className="flex text-[15px] text-black dark:text-white">
-                {Navlinks.map((data) => {
-                  const { id, link, name } = data;
-                  return (
-                    <div key={id} className="relative px-3 py-1">
-                      {pathname === link && (
-                        <motion.div
-                          layoutId="nav-desktop"
-                          transition={{
-                            type: "spring",
-                          }}
-                          style={{ borderRadius: 9999 }}
-                          className="absolute inset-0 bg-primary-border/50"
-                        ></motion.div>
-                      )}
-                      <Link
-                        href={link}
-                        className="relative hover:opacity-60 hover:transition-opacity hover:duration-500 font-semibold"
-                      >
-                        {name}
-                      </Link>
-                    </div>
-                  );
-                })}
+          <div
+            className={`py-4 dark:bg-slate-950 lg:px-28 flex w-full items-center justify-around px-2 ${
+              !navColor
+                ? "bg-primary-background "
+                : "bg-opacity-30 backdrop-blur-lg backdrop-filter border-b-[2px] border-gray-600"
+            }`}
+          >
+            <Link href="/">
+              <div className="w-28">
+                <Image src={Logo} alt="Logo" className="" />
               </div>
-              <div className="flex items-center space-x-3 text-base">
-                <Link
-                  href="https://app.aviotcapitals.com/register/"
-                  className={cn(
-                    buttonVariants({
-                      variant: "secondary",
-                      size: "lg",
-                    }),
-                    "text-base hover:bg-green-800 border hover:text-white"
-                  )}
-                >
-                  Sign Up
-                </Link>
-                <Link
-                  href="https://app.aviotcapitals.com/"
-                  className={cn(
-                    buttonVariants({
-                      size: "lg",
-                    }),
-                    "text-base hover:bg-green-800 bg-black"
-                  )}
-                >
-                  Log In
-                </Link>
-              </div>
-            </div>
-          </div>
-        </div>
-        {/* tablet */}
-        {/* <div className="hidden w-full items-center sm:flex md:hidden">
-          <div className="fixed top-4 flex items-center justify-between w-full px-4">
-            <div>
-              <Link href="/">
-                <div className="p-2">
-                  <Image src={Logo} className="w-28" alt="Logo" />
-                </div>
-              </Link>
+            </Link>
+            <div className="flex text-[15px] text-black dark:text-white">
+              {Navlinks.map((data) => {
+                const { id, link, name } = data;
+                return (
+                  <div key={id} className="relative px-3 py-1">
+                    {pathname === link && (
+                      <motion.div
+                        layoutId="nav-desktop"
+                        transition={{
+                          type: "spring",
+                        }}
+                        style={{ borderRadius: 9999 }}
+                        className="absolute inset-0 bg-primary-border/50"
+                      ></motion.div>
+                    )}
+                    <Link
+                      href={link}
+                      className="relative hover:opacity-60 hover:transition-opacity hover:duration-500 font-semibold"
+                    >
+                      {name}
+                    </Link>
+                  </div>
+                );
+              })}
             </div>
             <div className="flex items-center space-x-3 text-base">
               <Link
@@ -164,33 +126,9 @@ export default function Navbar() {
               >
                 Log In
               </Link>
-              <div className="flex items-center space-x-6 px-4">
-                <div className="flex w-6 items-center justify-end">
-                  <div
-                    className="group flex h-6 w-6 cursor-pointer flex-col items-center justify-between"
-                    onClick={handleHanburgerMenu}
-                  >
-                    <span
-                      className={`h-[2px] w-full transform cursor-pointer rounded-lg dark:bg-white bg-black mix-blend-difference transition duration-300 ease-in-out ${
-                        openBtn ? "translate-y-2.5 rotate-45 bg-black" : ""
-                      }`}
-                    />
-                    <span
-                      className={`h-[2px] w-[60%] transform cursor-pointer rounded-lg dark:bg-white bg-black mix-blend-difference transition duration-300 ease-in-out ${
-                        openBtn ? "hidden w-0" : "w-full"
-                      }`}
-                    />
-                    <span
-                      className={`h-[2px] w-full transform cursor-pointer rounded-lg dark:bg-white bg-black mix-blend-difference transition duration-300 ease-in-out ${
-                        openBtn ? "-translate-y-3 -rotate-45 bg-black" : ""
-                      }`}
-                    />
-                  </div>
-                </div>
-              </div>
             </div>
           </div>
-        </div> */}
+        </div>
         {/* mobile */}
         <div className="flex w-full items-center sm:hidden">
           <AnimatePresence mode="sync">
@@ -202,7 +140,7 @@ export default function Navbar() {
                 className="fixed inset-0 navBg"
               >
                 <div className="flex h-full w-full flex-col pt-48 bg-white dark:bg-slate-950">
-                  <div className="absolute inset-0 z-10 bg-opacity-20" />
+                  <div className="absolute inset-0 z-10 " />
                   <div className="absolute inset-0 z-10 bg-opacity-20 bg-gradient-to-t from-primary-border/50 via-transparent to-primary-border/50" />
                   <div className="relative z-20 flex w-full justify-between px-4">
                     <div className="w-10"></div>
@@ -261,7 +199,7 @@ export default function Navbar() {
               </motion.div>
             )}
           </AnimatePresence>
-          <div className="fixed inset-x-4 top-[94px] dark:bg-slate-950 bg-white flex items-center justify-between bg-opacity-85 px-3 py-2">
+          <div className="bg-white dark:bg-slate-950 flex items-center justify-between bg-opacity-85 px-3 py-2 w-full">
             <div>
               <Link href="/">
                 <div className="p-2">
