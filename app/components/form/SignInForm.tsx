@@ -80,15 +80,19 @@ export default function SignInForm() {
         </div>
 
         {/* Second part of form */}
+        {/* For the purpose of this project the submit takes you to the homepage */}
 
-        <Button type="submit" className="w-full rounded-sm bg-black">
-          Sign in
-        </Button>
+        {/* Submit form */}
+
+        <div>
+          <Link href={"/"}>
+            <Button type="submit" className="w-full rounded-sm bg-black">
+              Sign in
+            </Button>
+          </Link>
+        </div>
       </form>
 
-      {/* <div className="mx-auto my-4 flex w-full items-center justify-evenly before:mr-4 before:block before:h-px before:flex-grow before:bg-stone-400 after:ml-4 after:block after:h-px after:flex-grow after:bg-stone-400">
-        or
-      </div> */}
       <p className="text-left text-sm text-gray-600 mt-2">
         Don't have an account ?
         <Link

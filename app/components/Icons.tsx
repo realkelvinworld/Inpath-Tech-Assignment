@@ -10,7 +10,7 @@ export const SunIcon = () => {
 export const MoonIcon = () => {
   return (
     <div>
-      <Moon className="text-indigo-950 w-6 h-6" />
+      <Moon className="dark:text-amber-50 text-indigo-950 w-6 h-6" />
     </div>
   );
 };

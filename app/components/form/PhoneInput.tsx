@@ -55,7 +55,7 @@ const InputComponent = React.forwardRef<HTMLInputElement, InputProps>(
         countryName={props.value as string}
       />
       <Input
-        className={cn("rounded-none lg:w-[281px] w-[264px]", className)}
+        className={cn("rounded-none lg:w-[281px] w-full", className)}
         {...props}
         ref={ref}
       />
