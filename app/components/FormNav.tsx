@@ -8,7 +8,7 @@ import { usePathname } from "next/navigation";
 function FormNav() {
   const pathname = usePathname();
   return (
-    <section className="bg-white dark:bg-slate-950 flex items-center justify-center py-5 border-b dark:border-slate-700 border-slate-300 lg:px-6 md:mx-0 ">
+    <section className="mt-8 bg-white dark:bg-slate-950 flex items-center justify-center py-5 border-b dark:border-slate-700 border-slate-300 lg:px-6 md:mx-0 ">
       <div
         className="lg:w-[380px]  w-[340px] bg-slate-100 dark:bg-slate-800 p-2 flex items-center justify-center rounded  gap-x-5
        mx-4"
