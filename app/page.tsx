@@ -1,5 +1,4 @@
 import SearchBar from "../app/components/SearchBar"; // Corrected spelling
-import SelectTile from "./components/SelectTile";
 
 export default function Home() {
   return (
@@ -18,7 +17,6 @@ export default function Home() {
         </div>
         <div className="py-6 ">
           <SearchBar />
-          {/* <SelectTile /> */}
         </div>
       </section>
     </main>
