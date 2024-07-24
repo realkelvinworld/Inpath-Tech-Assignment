@@ -7,7 +7,7 @@ import TrainingsWhite from "@/public/images/trainings-white.svg";
 
 export const NavSwitchLinks = [
   { id: 1, name: "For Students and Graduates", link: "/" },
-  { id: 2, name: "For Partners", link: "/about" },
+  { id: 2, name: "For Partners", link: "/partners" },
 ];
 export const FormSwitchLinks = [
   { id: 1, name: "Home", link: "/" },
