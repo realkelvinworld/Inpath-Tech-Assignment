@@ -86,7 +86,7 @@ function SelectAccount() {
         </div>
       </div>
       <div className="w-full mt-4">
-        <Link href={"/sign-up"}>
+        <Link href={"/career-status"}>
           <Button
             type="submit"
             className="w-full rounded-sm bg-black flex justify-center items-center"
