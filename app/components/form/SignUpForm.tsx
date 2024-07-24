@@ -33,6 +33,8 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
+import { PhoneInput } from "@/app/components/PhoneInput";
+
 // import GoogleSign from "../googleSign";
 
 const formSchema = z
@@ -189,6 +191,11 @@ export default function SignUpForm() {
               </FormItem>
             )}
           />
+          <div>
+            <FormLabel>Phone number</FormLabel>
+            <PhoneInput />
+          </div>
+
           <FormField
             control={form.control}
             name="password"
