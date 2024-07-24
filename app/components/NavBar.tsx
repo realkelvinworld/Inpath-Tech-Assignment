@@ -224,7 +224,7 @@ export default function Navbar() {
                           </div>
                           <div>
                             <Link
-                              href="/sign-up"
+                              href="/account-type"
                               onClick={hideMenu}
                               className="text-2xl dark:text-white dark:border-white text-gray-900 border border-gray-950 rounded-lg px-6 py-2"
                             >
