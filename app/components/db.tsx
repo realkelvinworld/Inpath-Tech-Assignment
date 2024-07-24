@@ -9,6 +9,10 @@ export const NavSwitchLinks = [
   { id: 1, name: "For Students and Graduates", link: "/" },
   { id: 2, name: "For Partners", link: "/about" },
 ];
+export const FormSwitchLinks = [
+  { id: 1, name: "Sign-Up", link: "/sign-up" },
+  { id: 2, name: "Sign-In", link: "/sign-in" },
+];
 
 export const Navlinks = [
   {

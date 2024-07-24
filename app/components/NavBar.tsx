@@ -374,7 +374,7 @@ export default function Navbar() {
             </div>
             <div className="flex items-center space-x-3 text-base">
               <Link
-                href="/"
+                href="/sign-up"
                 className={cn(
                   buttonVariants({
                     variant: "secondary",
@@ -386,7 +386,7 @@ export default function Navbar() {
                 Sign Up
               </Link>
               <Link
-                href="/"
+                href="/sign-in"
                 className={cn(
                   buttonVariants({
                     size: "lg",
@@ -444,7 +444,7 @@ export default function Navbar() {
                         <div className="flex flex-col">
                           <div className="mb-10">
                             <Link
-                              href="https://app.aviotcapitals.com/"
+                              href="/sign-in"
                               onClick={hideMenu}
                               className="text-3xl dark:text-white dark:border-white text-gray-900 border border-gray-950 rounded-lg px-8 py-3"
                             >
@@ -453,7 +453,7 @@ export default function Navbar() {
                           </div>
                           <div>
                             <Link
-                              href="https://app.aviotcapitals.com/register/"
+                              href="/sign-up"
                               onClick={hideMenu}
                               className="text-3xl dark:text-white dark:border-white text-gray-900 border border-gray-950 rounded-lg px-8 py-3"
                             >
