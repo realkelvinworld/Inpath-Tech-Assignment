@@ -1,5 +1,5 @@
 import React from "react";
-import FormHeader from "../components/FormHeader";
+import FormHeader from "../components/NavBars/FormHeader";
 import SelectAccount from "../components/SelectAccount";
 
 function page() {

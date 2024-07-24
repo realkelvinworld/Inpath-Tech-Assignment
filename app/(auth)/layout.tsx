@@ -1,6 +1,6 @@
 import React from "react";
-import FormNav from "../components/FormNav";
-import FormHeader from "../components/FormHeader";
+import FormNav from "../components/NavBars/FormNav";
+import FormHeader from "../components/NavBars/FormHeader";
 
 interface AuthLayoutProps {
   children: React.ReactNode;

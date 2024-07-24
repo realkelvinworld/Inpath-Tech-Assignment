@@ -7,6 +7,12 @@
   background-size: cover;
   /* opacity: 0.9; */
 }
+.herobg2 {
+  background-image: url("../public/images/user-smile-fill.svg");
+  background-repeat: no-repeat;
+  background-size: contain;
+  /* opacity: 0.9; */
+}
 /* Thin */
 @font-face {
   font-family: "Bicyclette";

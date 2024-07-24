@@ -1,5 +1,5 @@
 import React from "react";
-import FormHeader from "../components/FormHeader";
+import FormHeader from "../components/NavBars/FormHeader";
 import Image from "next/image";
 import Link from "next/link";
 import { VerifyImage } from "../components/img";

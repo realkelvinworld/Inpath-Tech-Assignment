@@ -1,5 +1,5 @@
 import React from "react";
-import { Logo } from "./img";
+import { Logo } from "../img";
 import Image from "next/image";
 import Link from "next/link";
 

@@ -1,8 +1,8 @@
 "use client";
 import React from "react";
 import Link from "next/link";
-import ThemeSwitcher from "./ThemeSwitcher";
-import { FormSwitchLinks, NavSwitchLinks } from "./db";
+import ThemeSwitcher from "../ThemeSwitcher";
+import { FormSwitchLinks, NavSwitchLinks } from "../db";
 import { usePathname } from "next/navigation";
 
 function FormNav() {

@@ -1,5 +1,5 @@
 import React from "react";
-import SecondaryNav from "../components/SecondaryNav";
+import SecondaryNav from "../components/NavBars/SecondaryNav";
 
 function page() {
   return (

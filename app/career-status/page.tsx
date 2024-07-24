@@ -1,6 +1,6 @@
 import React from "react";
 import SelectCareer from "../components/SelectCareer";
-import FormHeader from "../components/FormHeader";
+import FormHeader from "../components/NavBars/FormHeader";
 
 function page() {
   return (

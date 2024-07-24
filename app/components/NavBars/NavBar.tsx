@@ -1,7 +1,7 @@
 "use client";
 import Image from "next/image";
-import { Logo } from "./img";
-import { Navlinks } from "./db";
+import { Logo } from "../img";
+import { Navlinks } from "../db";
 import Link from "next/link";
 import { useState, useEffect } from "react";
 import { usePathname } from "next/navigation";
@@ -240,7 +240,7 @@ export default function Navbar() {
               </motion.div>
             )}
           </AnimatePresence>
-          <div className="bg-white dark:bg-slate-950 flex items-center justify-between  px-3 py-2 w-full">
+          <div className="bg-white dark:bg-slate-950 z-[1000] flex items-center justify-between  px-3 py-2 w-full">
             <div>
               <Link href="/">
                 <div className="p-2">

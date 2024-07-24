@@ -8,6 +8,12 @@ import Candidate from "@/public/images/candidate.svg";
 import Employer from "@/public/images/employer.svg";
 import Mentor from "@/public/images/mentor.svg";
 import Trainer from "@/public/images/trainer.svg";
+import Education from "@/public/images/education.svg";
+import WorkExperience from "@/public/images/workexperience.svg";
+import InterestSkills from "@/public/images/interestandskills.svg";
+import Certification from "@/public/images/certifications.svg";
+import Accomplishments from "@/public/images/accomplishments.svg";
+import Upload from "@/public/images/upload.svg";
 
 export const NavSwitchLinks = [
   { id: 1, name: "For Students and Graduates", link: "/" },
@@ -23,6 +29,7 @@ export const SecondarySwitchLinks = [
   { id: 2, name: "Jobs", link: "/jobs" },
   { id: 3, name: "Mentorship", link: "/mentorship" },
   { id: 4, name: "Trainings", link: "/trainings" },
+  { id: 4, name: "Partners", link: "/partners" },
 ];
 
 export const Navlinks = [
@@ -98,4 +105,59 @@ export const AccountType2 = [
     description: "An organisation offering training programmes",
     comingSoon: "Coming soon",
   },
+];
+
+//
+export const Profiletabs = [
+  {
+    id: 1,
+    icon: Education,
+    title: "Education",
+    modalType: "formEdu",
+    description: "School info, field of study",
+  },
+  {
+    id: 2,
+    icon: WorkExperience,
+    title: "Work Experience",
+    modalType: "formWork",
+    description: "Where you've worked,your role",
+  },
+  {
+    id: 3,
+    icon: InterestSkills,
+    title: "Interests and skills",
+    modalType: "",
+    description: "Career interests and skillset",
+  },
+  {
+    id: 4,
+    icon: Certification,
+    title: "Certifications",
+    modalType: "",
+    description: "Certifications worth highlighting",
+  },
+  {
+    id: 5,
+    icon: Accomplishments,
+    title: "Accomplishments",
+    modalType: "",
+    description: "Personal achievements & impact",
+  },
+  {
+    id: 6,
+    icon: Upload,
+    title: "Upload Resume",
+    modalType: "resumeUpload",
+    description: "CV,portfolio",
+  },
+];
+
+export const ProfileStatus = [
+  { id: 1, value: "Education" },
+  { id: 2, value: "Work Experience" },
+  { id: 3, value: "Interests & Skills" },
+  { id: 4, value: "Certificationss" },
+  { id: 5, value: "Accomplishments" },
+  { id: 6, value: "Upload Resume" },
 ];
