@@ -9,6 +9,7 @@ import Employer from "@/public/images/employer.svg";
 import Mentor from "@/public/images/mentor.svg";
 import Trainer from "@/public/images/trainer.svg";
 import Education from "@/public/images/education.svg";
+import EducationLight from "@/public/images/educationLight.svg";
 import WorkExperience from "@/public/images/workexperience.svg";
 import InterestSkills from "@/public/images/interestandskills.svg";
 import Certification from "@/public/images/certifications.svg";
@@ -149,9 +150,11 @@ export const Profiletabs = [
     icon: Upload,
     title: "Upload Resume",
     modalType: "resumeUpload",
-    description: "CV,portfolio",
+    description: "CV, portfolio",
   },
 ];
+
+export { EducationLight };
 
 export const ProfileStatus = [
   { id: 1, value: "Education" },

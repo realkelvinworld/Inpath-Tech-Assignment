@@ -34,7 +34,7 @@ function ProfileTracker() {
             text={`${Math.round(completionPercentage)}%`}
             styles={buildStyles({
               textSize: "26px",
-              pathColor: `rgba(255, 255, 255, ${completionPercentage / 100})`,
+              pathColor: `rgba(255, 255, 0, ${completionPercentage / 100})`,
               textColor: "#fff",
               trailColor: "#d6d6d6",
             })}
