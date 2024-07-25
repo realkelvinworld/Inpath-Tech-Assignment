@@ -2,13 +2,11 @@
 import React, { useState } from "react";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
-import { format } from "date-fns";
-import { CalendarIcon, Eye, EyeOff } from "lucide-react";
+import { Eye, EyeOff } from "lucide-react";
 import { z } from "zod";
 import {
   Form,
   FormControl,
-  FormDescription,
   FormField,
   FormItem,
   FormLabel,
@@ -17,14 +15,7 @@ import {
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import Link from "next/link";
-import {
-  Popover,
-  PopoverContent,
-  PopoverTrigger,
-} from "@/components/ui/popover";
 import { toast } from "@/components/ui/use-toast";
-import { Calendar } from "@/components/ui/calendar";
-import { cn } from "@/lib/utils";
 import {
   Select,
   SelectContent,
@@ -39,8 +30,8 @@ const formSchema = z.object({
   password: z.string().min(8, "Password must have 8 characters"),
   fullName: z.string().min(2, "Full name must be more than 2 characters"),
   gender: z.string().min(2, "Select a gender"),
-  dob: z.date({
-    required_error: "A date of birth is required.",
+  dob: z.string().refine((val) => !isNaN(Date.parse(val)), {
+    message: "A date of birth is required.",
   }),
 });
 
@@ -90,44 +81,20 @@ export default function SignUpForm() {
             />
 
             {/* Date of birth and gender */}
-            <div className="flex items-center justify-between ">
+            <div className="flex items-center justify-between">
               <FormField
                 control={form.control}
                 name="dob"
                 render={({ field }) => (
-                  <FormItem className="flex flex-col ">
+                  <FormItem className="flex flex-col">
                     <FormLabel>Date of birth</FormLabel>
-                    <Popover>
-                      <PopoverTrigger asChild>
-                        <FormControl>
-                          <Button
-                            variant={"outline"}
-                            className={cn(
-                              "lg:w-[240px] w-[180px] pl-3 text-left font-normal rounded-none",
-                              !field.value && "text-muted-foreground"
-                            )}
-                          >
-                            {field.value ? (
-                              format(field.value, "PPP")
-                            ) : (
-                              <span>Pick a date</span>
-                            )}
-                            <CalendarIcon className="ml-auto h-4 w-4 opacity-50" />
-                          </Button>
-                        </FormControl>
-                      </PopoverTrigger>
-                      <PopoverContent className="w-auto p-0" align="start">
-                        <Calendar
-                          mode="single"
-                          selected={field.value}
-                          onSelect={field.onChange}
-                          disabled={(date) =>
-                            date > new Date() || date < new Date("1900-01-01")
-                          }
-                          initialFocus
-                        />
-                      </PopoverContent>
-                    </Popover>
+                    <FormControl>
+                      <Input
+                        type="date"
+                        {...field}
+                        className="rounded-none lg:w-[240px] w-[180px]"
+                      />
+                    </FormControl>
                     <FormMessage />
                   </FormItem>
                 )}
@@ -137,7 +104,7 @@ export default function SignUpForm() {
                 control={form.control}
                 name="gender"
                 render={({ field }) => (
-                  <FormItem className="flex flex-col ">
+                  <FormItem className="flex flex-col">
                     <FormLabel>Gender</FormLabel>
                     <Select
                       onValueChange={field.onChange}
