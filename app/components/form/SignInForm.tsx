@@ -1,13 +1,13 @@
 /* eslint-disable react/no-unescaped-entities */
 "use client";
-import React from "react";
+import React, { useState } from "react";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
+import { Eye, EyeOff } from "lucide-react";
 import { z } from "zod";
 import {
   Form,
   FormControl,
-  // FormDescription,
   FormField,
   FormItem,
   FormLabel,
@@ -16,7 +16,6 @@ import {
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import Link from "next/link";
-// import GoogleSign from "../googleSign";
 
 const formSchema = z.object({
   email: z.string().min(1, "Email is required").email("Invalid email"),
@@ -27,6 +26,8 @@ const formSchema = z.object({
 });
 
 export default function SignInForm() {
+  const [showPassword, setShowPassword] = useState(false);
+
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
   });
@@ -34,8 +35,8 @@ export default function SignInForm() {
   const onSubmit = (values: z.infer<typeof formSchema>) => {
     console.log(values);
   };
+
   return (
-    // <main className="flex justify-center items-center">
     <Form {...form}>
       <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8">
         <div className="space-y-2">
@@ -53,7 +54,6 @@ export default function SignInForm() {
                     {...field}
                   />
                 </FormControl>
-
                 <FormMessage />
               </FormItem>
             )}
@@ -65,25 +65,32 @@ export default function SignInForm() {
               <FormItem>
                 <FormLabel>Password</FormLabel>
                 <FormControl>
-                  <Input
-                    placeholder="Enter your password"
-                    type="password"
-                    className="rounded-none"
-                    {...field}
-                  />
+                  <div className="relative">
+                    <Input
+                      placeholder="Enter your password"
+                      type={showPassword ? "text" : "password"}
+                      className="rounded-none pr-10"
+                      {...field}
+                    />
+                    <div
+                      className="absolute inset-y-0 right-0 pr-3 flex items-center cursor-pointer"
+                      onClick={() => setShowPassword(!showPassword)}
+                    >
+                      {showPassword ? (
+                        <EyeOff className="w-5 h-5 text-gray-500" />
+                      ) : (
+                        <Eye className="w-5 h-5 text-gray-500" />
+                      )}
+                    </div>
+                  </div>
                 </FormControl>
-
                 <FormMessage />
               </FormItem>
             )}
           />
         </div>
 
-        {/* Second part of form */}
-        {/* For the purpose of this project the submit takes you to the homepage */}
-
         {/* Submit form */}
-
         <div>
           <Link href={"/"}>
             <Button type="submit" className="w-full rounded-sm bg-black">
@@ -103,6 +110,5 @@ export default function SignInForm() {
         </Link>
       </p>
     </Form>
-    // </main>
   );
 }
