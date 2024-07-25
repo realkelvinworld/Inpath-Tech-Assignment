@@ -23,7 +23,7 @@ function SelectCareer() {
             buttonVariants({ variant: "outline" }),
             message === career.value
               ? "border-black bg-white dark:border-gray-800 dark:bg-gray-700"
-              : "text-black",
+              : "dark:text-white text-black",
             "mr-2 cursor-pointer text-center text-xs font-semibold py-6 rounded-full w-full"
           )}
         >
