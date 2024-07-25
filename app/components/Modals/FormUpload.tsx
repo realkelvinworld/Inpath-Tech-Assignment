@@ -22,11 +22,11 @@ export function FormUpload({ open, onClose }: FormUploadProps) {
     <Dialog open={open} onOpenChange={onClose}>
       <DialogContent className="sm:max-w-[425px]">
         <DialogHeader>
-          <DialogTitle>Upload Documents</DialogTitle>
-          <DialogDescription>
+          <DialogTitle>Upload Resume</DialogTitle>
+          {/* <DialogDescription>
             Upload your resume/CV and any other relevant files. Click save when
             you're done.
-          </DialogDescription>
+          </DialogDescription> */}
         </DialogHeader>
         <div className="grid gap-4 py-4">
           <div className="grid gap-4">

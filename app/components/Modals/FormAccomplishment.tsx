@@ -28,16 +28,16 @@ export function FormAccomplishments({
       <DialogContent className="sm:max-w-[425px]">
         <DialogHeader>
           <DialogTitle>Add Accomplishments</DialogTitle>
-          <DialogDescription>
+          {/* <DialogDescription>
             Add your accomplishments here. Click save when you're done.
-          </DialogDescription>
+          </DialogDescription> */}
         </DialogHeader>
         <div className="grid gap-4 py-4">
           <div className="grid gap-4">
             <div>
-              <Label htmlFor="editor" className="block mb-2">
+              {/* <Label htmlFor="editor" className="block mb-2">
                 Accomplishments
-              </Label>
+              </Label> */}
               <ReactQuill
                 id="editor"
                 theme="snow"

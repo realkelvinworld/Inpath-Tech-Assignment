@@ -29,10 +29,10 @@ export function FormWork({ open, onClose }: FormWorkProps) {
       <DialogContent className="sm:max-w-[425px]">
         <DialogHeader>
           <DialogTitle>Work Experience</DialogTitle>
-          <DialogDescription>
+          {/* <DialogDescription>
             Make changes to your work experience here. Click save when you're
             done.
-          </DialogDescription>
+          </DialogDescription> */}
         </DialogHeader>
         <div className="grid gap-4 py-4">
           <div className="grid grid-cols-1 gap-4">

@@ -4,7 +4,7 @@ import SelectAccount from "../components/SelectAccount";
 
 function page() {
   return (
-    <main className=" dark:bg-slate-950 bg-white flex flex-col">
+    <main className=" dark:bg-slate-950 h-screen bg-white flex flex-col">
       <section className="w-full">
         <FormHeader />
       </section>

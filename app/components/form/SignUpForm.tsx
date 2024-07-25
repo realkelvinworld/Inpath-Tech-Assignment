@@ -1,15 +1,14 @@
 "use client";
-import React from "react";
+import React, { useState } from "react";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { format } from "date-fns";
-import { CalendarIcon } from "lucide-react";
+import { CalendarIcon, Eye, EyeOff } from "lucide-react";
 import { z } from "zod";
 import {
   Form,
   FormControl,
   FormDescription,
-  // FormDescription,
   FormField,
   FormItem,
   FormLabel,
@@ -35,31 +34,19 @@ import {
 } from "@/components/ui/select";
 import { PhoneInput } from "@/app/components/form/PhoneInput";
 
-// import GoogleSign from "../googleSign";
-
-const formSchema = z
-  .object({
-    email: z.string().min(1, "Email is required").email("Invalid email"),
-    password: z
-      .string()
-      .min(1, "Password is required")
-      .min(8, "Password must have 8 characters"),
-    confirmPassword: z
-      .string()
-      .min(1, "Password is required")
-      .min(8, "Password must have 8 characters"),
-    fullName: z.string().min(2, "Full name must be more than 2 characters"),
-    gender: z.string().min(2, "Select a gender"),
-    dob: z.date({
-      required_error: "A date of birth is required.",
-    }),
-  })
-  .refine((data) => data.password === data.confirmPassword, {
-    path: ["confirmPassword"],
-    message: "Passwords do not match",
-  });
+const formSchema = z.object({
+  email: z.string().min(1, "Email is required").email("Invalid email"),
+  password: z.string().min(8, "Password must have 8 characters"),
+  fullName: z.string().min(2, "Full name must be more than 2 characters"),
+  gender: z.string().min(2, "Select a gender"),
+  dob: z.date({
+    required_error: "A date of birth is required.",
+  }),
+});
 
 export default function SignUpForm() {
+  const [showPassword, setShowPassword] = useState(false);
+
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
     defaultValues: {
@@ -76,9 +63,8 @@ export default function SignUpForm() {
         </pre>
       ),
     });
-    // const onSubmit = (values: z.infer<typeof formSchema>) => {
-    // console.log(values);
   }
+
   return (
     <main className=" ">
       <Form {...form}>
@@ -98,18 +84,18 @@ export default function SignUpForm() {
                       className="rounded-none"
                     />
                   </FormControl>
-
                   <FormMessage />
                 </FormItem>
               )}
             />
+
             {/* Date of birth and gender */}
             <div className="flex items-center justify-between ">
               <FormField
                 control={form.control}
                 name="dob"
                 render={({ field }) => (
-                  <FormItem className="flex  flex-col ">
+                  <FormItem className="flex flex-col ">
                     <FormLabel>Date of birth</FormLabel>
                     <Popover>
                       <PopoverTrigger asChild>
@@ -182,12 +168,10 @@ export default function SignUpForm() {
                   <FormControl>
                     <Input
                       placeholder="mail@example.com"
-                      // type="email"
                       className="rounded-none"
                       {...field}
                     />
                   </FormControl>
-
                   <FormMessage />
                 </FormItem>
               )}
@@ -204,42 +188,30 @@ export default function SignUpForm() {
                 <FormItem>
                   <FormLabel>Password</FormLabel>
                   <FormControl>
-                    <Input
-                      placeholder="Enter your password"
-                      type="password"
-                      className="rounded-none"
-                      {...field}
-                    />
+                    <div className="relative">
+                      <Input
+                        placeholder="Enter your password"
+                        type={showPassword ? "text" : "password"}
+                        className="rounded-none pr-10"
+                        {...field}
+                      />
+                      <div
+                        className="absolute inset-y-0 right-0 pr-3 flex items-center cursor-pointer"
+                        onClick={() => setShowPassword(!showPassword)}
+                      >
+                        {showPassword ? (
+                          <EyeOff className="w-5 h-5 text-gray-500" />
+                        ) : (
+                          <Eye className="w-5 h-5 text-gray-500" />
+                        )}
+                      </div>
+                    </div>
                   </FormControl>
-
-                  <FormMessage />
-                </FormItem>
-              )}
-            />
-            <FormField
-              control={form.control}
-              name="confirmPassword"
-              render={({ field }) => (
-                <FormItem>
-                  <FormLabel>Re-Enter Password</FormLabel>
-                  <FormControl>
-                    <Input
-                      placeholder="Confirm  your password"
-                      type="password"
-                      className="rounded-none"
-                      {...field}
-                    />
-                  </FormControl>
-
                   <FormMessage />
                 </FormItem>
               )}
             />
           </div>
-
-          {/* Second part of form 
-          submission*/}
-          {/* For the purpose of this project the submit takes you to the verification page */}
 
           {/* Submit form */}
           <div>
@@ -251,11 +223,11 @@ export default function SignUpForm() {
           </div>
         </form>
 
-        <p className="text-left text-sm  mt-2">
-          Already have an account ?
+        <p className="text-left text-sm mt-2">
+          Already have an account?
           <Link
             href={"/sign-in"}
-            className="font-bold text-lg dark:text-green-500 text-green-700"
+            className="font-bold text-lg dark:text-green-500 text-green-700 ml-1"
           >
             Sign In
           </Link>

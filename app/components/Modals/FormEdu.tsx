@@ -28,9 +28,9 @@ export function FormEdu({ open, onClose }: FormEduProps) {
       <DialogContent className="sm:max-w-[425px]">
         <DialogHeader>
           <DialogTitle>Education</DialogTitle>
-          <DialogDescription>
+          {/* <DialogDescription>
             Make changes to your education here. Click save when you're done.
-          </DialogDescription>
+          </DialogDescription> */}
         </DialogHeader>
         <div className="grid gap-4 py-4">
           <div className="grid grid-cols-1 gap-4">

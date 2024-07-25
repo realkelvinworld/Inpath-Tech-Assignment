@@ -78,7 +78,7 @@ export default function Navbar() {
         <div className="hidden md:flex relative w-full z-10 bg-white">
           {/* navlinks */}
           <div
-            className={`py-4 dark:bg-slate-950 lg:px-28 flex w-full items-center justify-around px-2 ${
+            className={`py-4 dark:bg-slate-950  lg:px-28 flex w-full items-center justify-around px-2 ${
               !navColor
                 ? "bg-primary-background "
                 : "bg-opacity-30 backdrop-blur-lg backdrop-filter border-b-[2px] border-gray-600"
@@ -89,7 +89,7 @@ export default function Navbar() {
                 <Image src={Logo} alt="Logo" className="" />
               </div>
             </Link>
-            <div className="flex text-[15px] text-black dark:text-white">
+            <div className="flex text-[15px] space-x-10 text-black   dark:text-white">
               {Navlinks.map((data) => {
                 const { id, link, name, icon1, icon2 } = data;
                 return (
