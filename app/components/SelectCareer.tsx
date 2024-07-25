@@ -42,7 +42,7 @@ function SelectCareer() {
         </label>
       ))}
       <div className="w-full">
-        <Link href={"/sign-up"}>
+        <Link href={"/profile-setup"}>
           <Button type="submit" className="w-full rounded-sm bg-black">
             Continue
           </Button>
